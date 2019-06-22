@@ -1,0 +1,96 @@
+<div class="content-screen">
+    <div class="content-header">
+   
+        <mat-card-header class="poster-header">
+            <div mat-card-avatar class="example-header-image">
+              <svg-icon src='../../../assets/mat-icons/calendar.svg' [svgStyle]="{ 'width.px':42 }"></svg-icon>
+         </div>
+            <mat-card-title><h2 class="poster-label"> &nbsp; Events</h2> </mat-card-title>
+            <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-header>
+
+      <div class="switch-section">
+                   
+          View all &nbsp; &nbsp;
+          <mat-slide-toggle [checked]="view_settings.events" (change)="toggleGet($event)"></mat-slide-toggle>
+
+      </div>
+</div>
+
+
+  <div  class="content-container">
+      <div class="list-item" *ngFor="let item of events" (click)="viewDetail(item.id)">
+           
+          <div *ngIf="!item.unRead" class="list-item-header">
+             <div class="list-item-header-number">
+                  {{item.date}}
+             </div>
+             <div class="list-item-header-label">
+                  {{item.month}}
+             </div>
+             
+         </div>
+         <div *ngIf="item.unRead" class="list-item-header-unread">
+            <div class="list-item-header-number">
+                 {{item.date}}
+            </div>
+            <div class="list-item-header-label">
+                 {{item.month}}
+            </div>
+            
+        </div>
+    
+          <div *ngIf="!item.unRead" class="list-item-summary">
+              <div class="list-item-title">
+                <h4 class="non-elipsis">{{item.title}}</h4>
+                <h4 class="small-elipsis">{{item.title | truncate : 22}}</h4>
+                <h4 class="mobile-elipsis">{{item.title | truncate : 28}}</h4>
+                <h4 class="medium-elipsis">{{item.title | truncate : 42}}</h4>
+              </div>
+              <div class="list-item-short-info">             
+                
+                      <span *ngIf="item.is_sent">
+                        {{item.group_name}} 
+                   </span>
+                    <span *ngIf="!item.is_sent">
+                        unsent  
+                   </span>
+              </div> 
+          </div>
+
+          <div *ngIf="item.unRead" class="list-item-summary-unread">
+            <div class="list-item-title">
+              <h4 class="non-elipsis">{{item.title}}</h4>
+              <h4 class="small-elipsis">{{item.title | truncate : 22}}</h4>
+              <h4 class="mobile-elipsis">{{item.title | truncate : 28}}</h4>
+              <h4 class="medium-elipsis">{{item.title | truncate : 42}}</h4>
+            </div>
+            <div class="list-item-short-info">             
+              
+                    <span *ngIf="item.is_sent">
+                      {{item.group_name}} 
+                 </span>
+                  <span *ngIf="!item.is_sent">
+                      unsent  
+                 </span>
+            </div> 
+        </div>
+        
+    </div>
+  </div>
+
+  <div class="content-footer">
+      <div class="fab-section">
+          <a  *ngIf="permissions.events.has_fab" mat-fab color="accent" routerLink="/events/new">
+            <mat-icon>
+              add
+   </mat-icon>
+        </a>
+      </div>
+          
+  </div>
+
+</div>
+
+
+ 

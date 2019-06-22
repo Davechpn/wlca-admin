@@ -1,0 +1,34 @@
+<div class="content-header">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image">
+        <mat-icon class="cluster-poster-icon">group_add</mat-icon>
+    </div >
+    <mat-card-title><span class="cluster-poster-label">Membership</span> </mat-card-title>
+    <mat-card-subtitle>{{group_name}}</mat-card-subtitle>
+</mat-card-header>
+</div>
+
+
+<div class="content-container">
+  <div class="text" *ngFor="let item of members">
+    <div>
+      
+  
+     
+          <div>
+            <mat-checkbox  [checked]="item.joined" (change)="toggleRegistration($event,item.id)">{{item.name}}</mat-checkbox>
+            
+          </div>
+        
+      
+    </div>
+</div>
+</div>
+
+<div class="content-footer">
+  <div class="fab-section">
+      <a  mat-fab color="accent" (click)="viewDetail()">
+        <mat-icon>check</mat-icon>
+    </a>
+  </div>    
+</div>

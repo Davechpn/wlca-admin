@@ -1,0 +1,69 @@
+
+<div class="content-screen">
+                <div class="content-header">
+                                <mat-card-header>
+                                                <div mat-card-avatar class="example-header-image">
+                                                    <mat-icon class="cluster-poster-icon">
+                                                        <svg-icon src='../../../assets/mat-icons/money-spend.svg' [svgStyle]="{ 'width.px':38 }"></svg-icon>
+                        
+                                                    </mat-icon>
+                                                </div >
+                                                <mat-card-title><span class="cluster-poster-label">{{(expenditure| async)?.title}}</span> </mat-card-title>
+                                                <mat-card-subtitle>{{(expenditure| async)?.group_name}} </mat-card-subtitle>
+                                        </mat-card-header>
+                                        
+                   
+                    <div class="switch-section">
+                                {{date}}       
+                    </div>
+                    <div class="summary-section">
+                              
+                                <div class="switch-section">
+                               <h3>{{year}}</h3>
+                        </div>
+                   </div>
+                </div>
+                <div class="content-container">
+                       
+                        <div class="details-content">
+                                        <table>
+                                                        <tr>
+                                                               <td><b>Receipt No</b></td>
+                                                               <td> : </td>
+                                                               <td> {{(expenditure| async)?.receipt_no}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                               <td><b>Date</b></td>
+                                                               <td> : </td>
+                                                               <td> {{(expenditure| async)?.date}}</td>
+                                                       </tr>
+                                                       <tr>
+                                                               <td><b>Supplier</b> </td>
+                                                               <td> : </td>
+                                                               <td> {{(expenditure| async)?.supplier}}</td>
+                                                       </tr>
+                                                       <tr>
+                                                               <td><b>Cashier </b></td>
+                                                               <td> : </td>
+                                                               <td> {{(expenditure| async)?.posted_by}} </td>
+                                                       </tr>
+                                                       <tr>
+                                                               <td><b>Account</b> </td>
+                                                               <td> : </td>
+                                                               <td>  {{(expenditure| async)?.account}}</td>
+                                                       </tr>
+                                                       <tr>
+                                                               <td><b>Total</b> </td>
+                                                               <td> : </td>
+                                                               <td> {{(expenditure| async)?.amount}} </td>
+                                                       </tr>
+                                                       <tr>
+                                                                       <td><b>Posted</b> </td>
+                                                                       <td> : </td>
+                                                                       <td> {{(expenditure| async)?.created_date}} </td>
+                                                       </tr>
+                                                    </table>
+                        </div>
+                    
+                </div>
+</div>

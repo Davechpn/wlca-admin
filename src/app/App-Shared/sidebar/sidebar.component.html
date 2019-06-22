@@ -1,0 +1,36 @@
+
+  <div class="sidebar-menu" >
+      <div *ngFor="let menuitem of menuItems; let i = index;" class="nav-item" (click)="navigate(menuitem.path,i)">
+     
+          <!--<i class="material-icons">{{menuitem.icontype}}</i>-->  
+            <div *ngIf="!menuitem.is_active" class="nav-title">  
+               <div class="nav-tou">
+                  <div class="unreads-container">
+                      <span class="unreads_counts" *ngIf="menuitem.show_count">{{menuitem.unread_count}}</span>
+                  </div>
+                  
+                  <svg-icon [src]="menuitem.icontype" [svgStyle]="{ 'width.px':20 }"></svg-icon>
+                  <span class="nav-title-label-mobile"  style="font-size: 0.5rem">{{menuitem.short_name}}</span>
+                  <span *ngIf="!menuitem.show_count" class="nav-title-label">&nbsp;{{menuitem.title}}</span>
+               
+               </div>   
+         </div>
+      
+             <div *ngIf="menuitem.is_active" class="nav-title" style="background-color:#efefef">       
+              <div class="nav-tou">
+                  <div class="unreads-container">
+                      <span class="unreads_counts" *ngIf="menuitem.show_count">{{menuitem.unread_count}}</span>
+                  </div>
+                  
+                  <svg-icon [src]="menuitem.icontype" [svgStyle]="{ 'width.px':22 }"></svg-icon>                
+                  <span  class="nav-title-label-mobile" style="font-size: 0.5rem">{{menuitem.short_name}}</span>
+                  <span *ngIf="!menuitem.show_count" class="nav-title-label">&nbsp;{{menuitem.title}}</span>
+               
+              </div>
+        </div>
+       
+     <div>
+  </div>
+  
+  
+

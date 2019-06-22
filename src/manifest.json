@@ -1,0 +1,53 @@
+
+{
+    "gcm_sender_id": "103953800507",
+    "name": "Disciple All Nations",
+    "short_name": "DANC FNL",
+    "theme_color": "#fff",
+    "background_color": "#fafafa",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "https://firebasestorage.googleapis.com/v0/b/danc-56f45.appspot.com/o/danclogo-72px.png?alt=media&token=be83c885-7c6f-4948-bb87-41197ae41b55",
+            "sizes": "72x72",
+            "type": "image/png"
+          },
+          {
+            "src": "https://firebasestorage.googleapis.com/v0/b/danc-56f45.appspot.com/o/danclogo-96px.png?alt=media&token=4403b7c3-3e5a-4c40-8c4d-a4b5b359dcb8",
+            "sizes": "96x96",
+            "type": "image/png"
+          },
+          {
+            "src": "https://firebasestorage.googleapis.com/v0/b/danc-56f45.appspot.com/o/danclogo-128px.png?alt=media&token=978f5052-cbe5-43b2-a087-fca5b0b807cc",
+            "sizes": "128x128",
+            "type": "image/png"
+          },
+          {
+            "src": "https://firebasestorage.googleapis.com/v0/b/danc-56f45.appspot.com/o/danclogo-144px.png?alt=media&token=39166cab-ef39-4ac7-8ce5-f8587b5c22c5",
+            "sizes": "144x144",
+            "type": "image/png"
+          },
+          {
+            "src": "https://firebasestorage.googleapis.com/v0/b/danc-56f45.appspot.com/o/danclogo-152px.png?alt=media&token=e11e9f48-7a1c-4819-b3c6-92db4111b7ba",
+            "sizes": "152x152",
+            "type": "image/png"
+          },
+          {
+            "src": "https://firebasestorage.googleapis.com/v0/b/danc-56f45.appspot.com/o/danclogo-192px.png?alt=media&token=d908bc16-1941-45a5-b30a-7aa1677ff0c1",
+            "sizes": "192x192",
+            "type": "image/png"
+          },
+          {
+            "src": "https://firebasestorage.googleapis.com/v0/b/danc-56f45.appspot.com/o/danclogo-384px.png?alt=media&token=3d1f57e4-b7c1-45bd-b0c3-5e476d62403e",
+            "sizes": "384x384",
+            "type": "image/png"
+          },
+          {
+            "src": "https://firebasestorage.googleapis.com/v0/b/danc-56f45.appspot.com/o/danclogo-512px.png?alt=media&token=2253cf1c-8cbb-4a3c-95f6-c88ec949cbb8",
+            "sizes": "512x512",
+            "type": "image/png"
+          }
+    ]
+}

@@ -1,0 +1,67 @@
+<div class="content-header-form">
+                <div style="display: flex; align-items: center">
+                                <h3 style="flex-grow:1">
+                                  Post New Fundraising
+                                </h3>
+                                <button mat-mini-fab color="accent"  [disabled]="profileForm.invalid" (click)="onSubmit()">
+                                          <mat-icon><svg-icon src='../../../assets/mat-icons/send.svg' [svgStyle]="{ 'width.px':24 }"></svg-icon></mat-icon> 
+                                </button>
+                             </div>
+        <div class="switch-section">
+         
+            
+        </div>
+    </div>
+    <div class="content-container-form">
+            <form  class="add-new-section"  [formGroup]="profileForm" (ngSubmit)="onSubmit()"> 
+                        <div class="new-form-section">
+                    <mat-form-field class="full-with-field">
+                            <input matInput placeholder="Name" class="form-control" formControlName="title" type="text" >
+                            <mat-error *ngIf="title.errors?.required&&title.touched">
+                                        Fundraising name is required
+                          </mat-error>
+                          <mat-error *ngIf="title.errors?.minlength&&title.touched">
+                                        Invalid Fundraising name 
+                          </mat-error>
+                          <mat-error *ngIf="title.errors?.maxlength&&title.touched">
+                                        Fundraising name too long 
+                            </mat-error>
+                    </mat-form-field>
+                
+                    <mat-form-field class="full-with-field">
+                            <textarea rows="5" matInput placeholder="Description" class="form-control" formControlName="body" type="text" >
+                                    </textarea>
+                             
+                            <mat-error *ngIf="body.errors?.required&&body.touched">
+                                        Fundraising description is required
+                            </mat-error>
+                            <mat-error *ngIf="body.errors?.minlength&&body.touched">
+                                        Invalid fundraising description 
+                            </mat-error>   
+
+                    </mat-form-field>
+                   
+                    <mat-form-field class="full-with-field">
+                            <input matInput placeholder="Target" class="form-control" formControlName="target" type="number" >
+                    </mat-form-field>
+                   
+                    <mat-form-field class="full-with-field">
+                            <input matInput [matDatepicker]="picker1" placeholder="Due On"  formControlName="end_date">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1></mat-datepicker>
+                            <mat-error *ngIf="end_date.errors?.required&&end_date.touched">
+                                        Due Date is required
+                          </mat-error>
+                    </mat-form-field>
+                   
+                </div>
+                </form>
+    </div>
+
+    <div class="content-footer">
+                <div class="fab-section">
+                  
+                </div>
+                    
+            </div>
+        

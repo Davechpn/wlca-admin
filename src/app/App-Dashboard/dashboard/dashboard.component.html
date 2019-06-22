@@ -1,0 +1,133 @@
+<div class="content-screen">
+ 
+  <div class="content-header">
+    <mat-card-header class="poster-header">
+        <div mat-card-avatar class="example-header-image">
+          <svg-icon src='../../../assets/mat-icons/analytics.svg' [svgStyle]="{ 'width.px':42 }"></svg-icon>
+          </div>
+        <mat-card-title><h2 class="poster-label"> Statistics</h2> </mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+</mat-card-header>
+    <div class="switch-section">
+  
+    </div>
+</div> 
+
+
+<div class="content-container" >
+  <div style="height:40px"></div>
+  <div class="dash-area">
+     
+        <!-- <div class="charts-area">
+            <div class="chart-item" >        
+                <google-chart #vchart [data]="pieChartData"></google-chart>      
+             </div>
+
+                
+
+            <div class="chart-item">
+                <google-chart #cchart [data]="columnChartData"></google-chart>
+             </div>
+            
+
+        </div> -->
+        <div style="font-size:0.75rem">Age Groups</div>
+        <div class="chart pie-area">
+          <canvas id="pie" baseChart
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            [options]="pieChartOptions"
+            [colors]="pieChartColors"
+            [legend]="pieChartLegend">
+          </canvas>
+        </div>
+      
+        <div style="font-size:0.75rem">Sub Groups</div><div>&nbsp;</div>
+            <div id="bar" class="chart" style="display: block">
+              <canvas *ngIf="bars_loaded" baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"           
+                [legend]="barChartLegend"
+                [chartType]="barChartType">
+              </canvas>
+            </div>
+            <!-- <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button> -->
+       
+         
+             
+           
+  </div>
+
+
+ 
+</div>
+
+
+  
+  <div class="account-name-label">
+     <mat-icon  (click)="signOut()">
+    reply
+     </mat-icon><b (click)="signOut()">Logout</b> &nbsp;{{username}} | {{rolename}}
+      
+
+    </div>
+</div>
+
+
+<div class="content-footer">
+    <div class="counts-area" style="margin-bottom: 8px;">
+        <div class="count-item">
+        
+             
+            <div>
+                <div mat-card-avatar class="example-header-image">
+               
+                  </div>
+              
+              
+            </div>
+           
+      
+    
+  </div>
+        <div class="count-item" >
+        
+             
+                  <div>
+                      <div mat-card-avatar class="example-header-image">
+                     
+                        </div>
+                      <mat-card-title class="count-label">ALL {{all_members}} &nbsp;&nbsp;</mat-card-title>
+                    
+                  </div>
+                 
+            
+          
+        </div>
+        <div  class="count-item">
+          
+                    <div>
+                        <div mat-card-avatar class="example-header-image">
+                          
+                          </div>
+                        <mat-card-title class="count-label">MEN {{male}} &nbsp;&nbsp; </mat-card-title>
+                      
+                      </div>
+             
+        </div>
+        <div  class="count-item">
+     
+                    <div>
+                        <div mat-card-avatar class="example-header-image">
+                          
+                          </div>
+                        <mat-card-title class="count-label">WOMEN {{female}}</mat-card-title>
+                       
+                      </div>
+                  
+        </div>
+
+      </div>
+</div>

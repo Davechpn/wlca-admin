@@ -1,0 +1,150 @@
+.content-header{
+    font-family: 'Mukta', sans-serif;
+}
+.content-header-form{
+    font-family: 'Mukta', sans-serif;
+}
+.content-container{ 
+    font-family: 'Mukta', sans-serif;
+}
+.content-container-form{ 
+    font-family: 'Mukta', sans-serif;
+}
+.full-with-field{
+    font-family: 'Mukta', sans-serif;
+}
+/* START DASHBOARD SECTION
+----------------------------------------------------------*/
+.content-container{
+   
+    font-family: 'Mukta', sans-serif;
+}
+
+.charts-area{
+    display: flex;
+    align-items: center;
+    height: 100%;
+   
+}
+
+.chart{
+width: 200px;
+height: 200px;
+}
+
+
+.counts-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 100%;
+}
+.count-item{
+    flex-grow: 1;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    
+ 
+}
+.account-name-label{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    cursor: pointer;
+    font-size:0.6rem;
+     display: flex;
+     align-items: center
+}
+.chart-item{
+    display: block;
+    width:46%;
+    margin: 6px;
+}
+.count-icon{
+    font-size:2.2em
+}
+.dash-area{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 80%;
+}
+.pie-area{
+   flex-grow: 1;
+  
+}
+
+  /*MEDIA QUERIES*/
+  @media screen and (max-width:1200px){
+  
+}
+
+/*MEDIA QUERIES*/
+@media screen and (max-width:1024px){
+ 
+}
+@media screen and (max-width:768px){
+    .count-icon{
+        font-size:1.6rem;
+        display: none
+    }
+    .count-item{
+        flex-grow: 1;
+        padding: 2px;
+     
+    }
+    .count-label{
+        font-size: 0.75rem;
+        font-weight: bold;
+    }
+
+    .counts-area{
+        height: 50px;
+    }
+    .charts-area{
+        flex-direction: column-reverse;
+     
+    }
+    .chart-item{
+        
+        width:200px;
+        height: 55%;
+    }
+    .chart-head{
+        display: none;
+    }
+
+}
+@media screen and (max-width:480px){
+    
+
+}
+/*Min height styles---------------*/
+@media screen and (min-height:360px){
+
+
+    }
+@media screen and (max-height:480px){
+    .chart-item{
+        width:100%;
+        margin: 2px;
+    }
+    .charts-area{
+        padding-top: 8px;
+        align-items: stretch;
+    }
+    .chart-item{
+        
+        height: 40%;
+    }
+
+}
+@media screen and (min-height:640px){
+  
+
+}
+
+ /*----------------------------------------------------------
+ END DASHBOARD SECTION :*/

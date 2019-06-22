@@ -1,0 +1,138 @@
+<div class="content-screen">
+        <div class="content-header">
+                <mat-card-header>
+                        <div mat-card-avatar class="example-header-image">
+                            <mat-icon class="cluster-poster-icon"> <svg-icon src='../../../assets/mat-icons/worlwide.svg' [svgStyle]="{ 'width.px':36 }"></svg-icon>
+                            </mat-icon>
+                        </div >
+                        <mat-card-title><span class="cluster-poster-label">{{(cluster| async)?.name}}</span> </mat-card-title>
+                        <mat-card-subtitle></mat-card-subtitle>
+                </mat-card-header>
+            
+            
+            
+            </div>
+            
+            <div class="content-container">
+            
+                    <mat-tab-group mat-stretch-tabs >
+                            <mat-tab>
+                                    <ng-template mat-tab-label>
+                                            <mat-icon class="example-tab-icon" style="padding-bottom: 20px">
+                                                        <svg-icon src='../../../assets/mat-icons/group.svg' [svgStyle]="{ 'width.px':38,'height.px':50}"></svg-icon>
+  </mat-icon>
+                                           <span class="nav-title-label">Members</span>
+                                    </ng-template>
+                                    <h4>Total : {{members_total}}</h4>
+                                    <div class="member-item "  *ngFor="let member of members" (click)="viewDetail(member.id)">
+                                       <div class="member-item-top">
+                                               <div class="member-item-name"> {{member.name}}</div>
+                                               <div *ngIf="member.role" class="member-item-tag">{{member.role}}</div>
+                                       </div>
+                                       <div class="member-item-bottom">
+                                               <div class="member-item-gender"> {{member.gender}} </div>
+                                               <div class="member-item-cell"> {{member.cell}}</div>
+                                       </div>
+                                   </div>
+                                
+                            </mat-tab>
+                            <mat-tab >
+                                    <ng-template mat-tab-label>
+                                            <mat-icon class="example-tab-icon"><svg-icon src='../../../assets/mat-icons/money-bag.svg' [svgStyle]="{ 'width.px':22}"></svg-icon></mat-icon>
+                                           <span class="nav-title-label">Fundraising</span>
+                                    </ng-template><br/>
+                                    <div class="switch-section">
+                                            <mat-form-field class="filter-dates">
+                                                    <input matInput [matDatepicker]="picker" (dateChange)="funSetStartDate($event)" placeholder="From" disabled>
+                                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                                    <mat-datepicker  touchUi #picker disabled="false"></mat-datepicker>
+                                                  </mat-form-field> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                  <mat-form-field class="filter-dates" >
+                                                        <input matInput [matDatepicker]="picker2" (dateChange)="funSetEndDate($event)" placeholder="To" disabled>
+                                                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                                        <mat-datepicker disabled="false"  touchUi #picker2></mat-datepicker>
+                                                  </mat-form-field>
+                                                     
+                    
+                                    </div>
+                                    <h4></h4>
+                                    <div class="member-item "  *ngFor="let member of fundraisings" (click)="viewDetailFundraising(member.id)">
+                                            <div class="member-item-top">
+                                                    <div class="member-item-name"> {{member.title}}</div>
+                                                    <div *ngIf="member.role" class="member-item-tag"></div>
+                                            </div>
+                                            <div class="member-item-bottom">
+                                                    <div class="member-item-gender"> {{member.target}} </div>
+                                                    <div class="member-item-cell"> {{member.end_date}}</div>
+                                            </div>
+                                 </div> 
+                                 
+                                </mat-tab>
+                            <mat-tab>
+                                    <ng-template mat-tab-label>
+                                            <mat-icon class="example-tab-icon"><svg-icon src='../../../assets/mat-icons/money-spend.svg' [svgStyle]="{ 'width.px':22,'height.px':22}"></svg-icon></mat-icon>
+                                            <span class="nav-title-label">Expenditure</span>
+                                    </ng-template>
+            
+                                    <div class="switch-section">
+                                            <mat-form-field class="filter-dates">
+                                                    <input matInput [matDatepicker]="picker3" (dateChange)="expSetStartDate($event)" placeholder="From" disabled>
+                                                    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                                                    <mat-datepicker  touchUi #picker3 disabled="false"></mat-datepicker>
+                                                  </mat-form-field> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                  <mat-form-field class="filter-dates" >
+                                                        <input matInput [matDatepicker]="picker4" (dateChange)="expSetEndDate($event)" placeholder="To" disabled>
+                                                        <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                                                        <mat-datepicker disabled="false"  touchUi #picker4></mat-datepicker>
+                                                  </mat-form-field>
+                    
+                                    </div>
+                                    <h4>Total : {{exp_total}}</h4>
+                                    <div class="member-item "  *ngFor="let member of expenditures" (click)="viewDetailExpense(member.id)">
+                                            <div class="member-item-top">
+                                                    <div class="member-item-name"> {{member.title}}</div>
+                                                    <div *ngIf="member.role" class="member-item-tag"></div>
+                                            </div>
+                                            <div class="member-item-bottom">
+                                                    <div class="member-item-gender"> {{member.date}} </div>
+                                                    <div class="member-item-cell"> {{member.amount}}</div>
+                                            </div>
+                                 </div> 
+                               </mat-tab>
+                    </mat-tab-group>
+            
+             
+            </div>
+            
+            <div class="content-footer">
+                <div class="fab-section">
+                
+                    <div  *ngIf="!isChild && isReg">
+                        <a mat-fab (click)="gotToNew()">
+                            <mat-icon>
+                                    add
+                    </mat-icon>
+                        </a>
+                    </div>
+                    <div *ngIf="isChild">
+                        <a mat-fab  (click)="gotToAdd()">
+                                <mat-icon>
+                                        add
+     </mat-icon>
+                        </a>
+                    </div>
+                    <div *ngIf="!isChild && !isReg">
+                            <a mat-fab  (click)="gotToAdd()">
+                                    <mat-icon>
+      </mat-icon>
+                            </a>
+                        </div>
+                </div>
+            </div>
+            
+</div>
+
+
+
+
+

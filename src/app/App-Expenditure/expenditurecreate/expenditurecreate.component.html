@@ -1,0 +1,71 @@
+<div class="content-header-form">
+                <div style="display: flex; align-items: center">
+                                <h3 style="flex-grow:1">
+                                  Post New Expenditure
+                                </h3>
+                                <button mat-mini-fab color="accent"  [disabled]="profileForm.invalid" (click)="onSubmit()">
+                                          <mat-icon><svg-icon src='../../../assets/mat-icons/send.svg' [svgStyle]="{ 'width.px':24 }"></svg-icon></mat-icon> 
+                                </button>
+                             </div>
+        <div class="switch-section">
+         
+            
+        </div>
+    </div>
+    <div class="content-container-form">
+            <form class="add-new-section" [formGroup]="profileForm" (ngSubmit)="onSubmit()"> 
+                        <div class="new-form-section">
+                    <mat-form-field class="full-with-field">
+                            <input matInput placeholder="Name" class="form-control" formControlName="title" type="text" >
+                            <mat-error *ngIf="title.errors?.required&&title.touched">
+                                        Expenditure name is required
+                            </mat-error>
+                            <mat-error *ngIf="title.errors?.minlength&&title.touched">
+                                        Invalid expenditure name 
+                            </mat-error>
+                            <mat-error *ngIf="title.errors?.maxlength&&title.touched">
+                                        Expenditure name too long 
+                            </mat-error>
+
+                    </mat-form-field>
+
+                    <mat-form-field class="full-with-field">
+                            <input matInput [matDatepicker]="picker1" placeholder="Date"  formControlName="date">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker touchUi #picker1></mat-datepicker>
+                            <mat-error *ngIf="date.errors?.required&&date.touched">
+                                        Date of expenditure is required
+                            </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-with-field">
+                            <input matInput placeholder="Supplier" class="form-control" formControlName="supplier" type="text" >
+                            <mat-error *ngIf="supplier.errors?.required&&supplier.touched">
+                                        Supplier name is required
+                            </mat-error>
+                    </mat-form-field>
+                   
+                    <mat-form-field class="full-with-field">
+                            <input matInput placeholder="Receipt No" class="form-control" formControlName="receipt_no" type="text" >
+                    </mat-form-field>
+
+                    <mat-form-field class="full-with-field">
+                            <input matInput placeholder="Amount" class="form-control" formControlName="amount" type="number" >
+                            <mat-error *ngIf="amount.errors?.required&&amount.touched">
+                                Amount is required
+                    </mat-error>
+                        </mat-form-field>
+
+                    <mat-form-field class="full-with-field">
+                            <input matInput placeholder="Account" class="form-control" formControlName="account" type="text" >
+                    </mat-form-field>  
+                </div>
+                </form>
+    </div>
+    <div class="content-footer">
+                <div class="fab-section">
+         
+                </div>
+                    
+            </div>
+        

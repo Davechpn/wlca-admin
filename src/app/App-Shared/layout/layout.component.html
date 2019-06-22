@@ -1,0 +1,41 @@
+<div class="full-screen">
+
+<div class="container">
+    <div class="spacer left"></div>
+
+    <div class="sidebar">
+      <app-sidebar></app-sidebar>
+    </div>  
+
+
+  
+
+    <div class="main-content">
+
+      <div class="header-section">
+           <div class="header-logo"><img src="../../../assets/icons/danclogo-96px.png" width="28" height="28"/>  </div>        
+          <div class="header-title">&nbsp;{{church_name}}</div>
+       
+      </div>
+
+      <mat-card class="content-section" [class.mat-elevation-z12]="true" >
+          <div class="group-section">
+              <div class="group-label">
+                   {{group_name}}
+              </div>
+          </div>
+          <router-outlet ></router-outlet>
+          
+      </mat-card>
+
+    </div>
+
+    <div class="spacer right">
+        <div class="signout-box">
+              
+        </div>
+            
+    </div>
+</div>
+
+</div>

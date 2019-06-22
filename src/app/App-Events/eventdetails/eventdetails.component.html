@@ -1,0 +1,48 @@
+<div class="content-screen">
+        <div class="content-header">
+
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image">
+                        <mat-icon class="cluster-poster-icon"><svg-icon src='../../../assets/mat-icons/calendar.svg' [svgStyle]="{ 'width.px':36 }"></svg-icon> </mat-icon>
+                    </div >
+                    <mat-card-title><span class="cluster-poster-label">{{(cevent| async)?.title}}</span> </mat-card-title>
+                    <mat-card-subtitle>{{(cevent| async)?.group_name}} </mat-card-subtitle>
+            </mat-card-header>
+            
+                <div class="switch-section">
+                        <div>
+                                
+                                {{from_date}}  <span style="font-size: 0.7rem">{{(cevent| async)?.start_time}}</span>
+                                    - {{to_date}} <span style="font-size: 0.7rem">{{(cevent| async)?.end_time}}</span>
+                              </div>
+                </div>
+                <div class="summary-section">
+                        <div class="switch-section">
+                               
+                                <h3>{{year}}</h3>
+                              
+                </div>
+                </div>
+            </div>
+            <div class="content-container">
+       
+                    {{(cevent| async)?.body}}
+                   
+            </div>
+            
+            
+            <div class="content-footer">
+                    <div class="fab-section">
+                            <div *ngIf="isMine" class="detail-edit">  
+                                    <a mat-button (click)="delete()">                  
+                                            Delete
+                                        <mat-icon>
+                                                <svg-icon src="../../assets/mat-icons/trash.svg" [svgStyle]="{ 'width.px':24 }"></svg-icon>
+                                        </mat-icon>
+                                         
+                                    </a>       
+                               </div>
+            
+                    </div>
+                </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="content-screen">
+
+    <div class="content-header">
+    
+        <mat-card-header class="poster-header">
+            <div mat-card-avatar class="example-header-image">
+              <svg-icon src='../../../assets/mat-icons/money-spend.svg' [svgStyle]="{ 'width.px':42 }"></svg-icon>
+            </div>
+            <mat-card-title><h2 class="poster-label"> &nbsp; Expenditure</h2> </mat-card-title>
+            <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-header>
+          <div class="switch-section">
+       
+              View all &nbsp; &nbsp;
+              <mat-slide-toggle [checked]="view_settings.expenditure" (change)="toggleGet($event)"></mat-slide-toggle>
+    
+          </div>
+        
+    </div>
+    
+    <div class="content-container">
+        <div class="switch-section">
+            <mat-form-field class="filter-dates">
+                    <input matInput [matDatepicker]="picker3" (dateChange)="expSetStartDate($event)" placeholder="From" disabled>
+                    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                    <mat-datepicker  touchUi #picker3 disabled="false"></mat-datepicker>
+                  </mat-form-field> &nbsp;&nbsp;&nbsp;&nbsp;
+                  <mat-form-field class="filter-dates" >
+                        <input matInput [matDatepicker]="picker4" (dateChange)="expSetEndDate($event)" placeholder="To" disabled>
+                        <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                        <mat-datepicker disabled="false"  touchUi #picker4></mat-datepicker>
+                  </mat-form-field>
+    
+    </div>
+      <br/>
+      <b>Total : {{exp_total}} </b>  
+      <br/><br/>
+      <div class="member-item " (click)="viewDetail(item.id)"  *ngFor="let item of items" >
+         <div class="member-item-top">
+                 <div class="member-item-name"> {{item.title}}</div>
+                 <div class="member-item-tag">{{item.account}}</div>
+         </div>
+         <div class="member-item-bottom">
+                 <div class="member-item-gender"> {{item.date}} </div>
+                 <div class="member-item-cell"> {{item.amount}}</div>
+         </div>
+      </div>
+    
+    </div>
+    
+    <div class="content-footer">
+        <div class="fab-section">
+            <a *ngIf="permissions.expenditure.has_fab" mat-fab color="accent"  routerLink="/expenditure/new">
+              <mat-icon>
+               add
+              </mat-icon>
+            </a>
+        </div>
+            
+    </div>
+    
+
+</div>
+

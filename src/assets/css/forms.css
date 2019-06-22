@@ -1,0 +1,52 @@
+
+/* START FORMS SECTION
+----------------------------------------------------------*/
+
+.new-form-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+}
+
+ .full-with-field{
+    width: 400px;
+    font-family: 'Mukta', sans-serif;
+ }
+ .submit-section{
+     display: flex;
+     justify-content: flex-end;
+     width: 400px;
+ }
+
+ /*MEDIA QUERIES*/
+ @media screen and (max-width:1024px){
+ 
+}
+@media screen and (max-width:768px){
+    .full-with-field{
+        width: 200px;
+     } 
+}
+@media screen and (max-width:480px){
+    
+
+}
+/*Min height styles---------------*/
+@media screen and (min-height:360px){
+
+
+    }
+@media screen and (max-height:480px){
+   
+
+}
+@media screen and (min-height:640px){
+  
+
+}
+
+
+ /*----------------------------------------------------------
+ END FORMS SECTION :*/
+

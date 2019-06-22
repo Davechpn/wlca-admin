@@ -1,0 +1,34 @@
+.content-header{
+    font-family: 'Mukta', sans-serif;
+}
+.content-header-form{
+    font-family: 'Mukta', sans-serif;
+}
+.content-container{ 
+    font-family: 'Mukta', sans-serif;
+}
+.content-container-form{ 
+    font-family: 'Mukta', sans-serif;
+}
+.full-with-field{
+    font-family: 'Mukta', sans-serif;
+}
+.unreads-container{
+   display:flex;
+   justify-content: flex-end;
+   width: 100%;
+}
+.unreads_counts{
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   right:-7px;
+   bottom:-5px;
+   font-size: 0.5rem;
+   color:red;
+   
+   border-radius: 50%;
+   height: 0.7rem;
+   width: 0.7rem;
+}

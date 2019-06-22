@@ -1,0 +1,89 @@
+<div class="content-screen">
+                <div class="content-header">
+                                <mat-card-header>
+                                                <div mat-card-avatar class="example-header-image">
+                                                                <svg-icon src='../../../assets/mat-icons/user.svg' [svgStyle]="{ 'width.px':36 }"></svg-icon>
+                                                </div >
+                                                <mat-card-title><span class="cluster-poster-label">{{(member| async)?.name}}</span> </mat-card-title>
+                                                <mat-card-subtitle>{{current_group_name}} </mat-card-subtitle>
+                                        </mat-card-header>
+                                        
+                    <div class="switch-section">
+                      
+                        
+                    </div>
+                    <div class="summary-section">
+                        <div>
+                                
+                
+                        </div>
+                    </div>
+                </div>
+                <div class="content-container" style="font-size: 0.83rem">
+                       
+                        <div class="details-content">
+                                        <table>
+                                                        
+                                                        <tr>
+                                                               <td>Gender</td>
+                                                               <td> :  </td>
+                                                               <td> {{(member| async)?.gender}}</td>
+                                                       </tr>
+                                                       <tr>
+                                                               <td>Cell_No </td>
+                                                               <td> :  </td>
+                                                               <td> {{(member| async)?.cell}}</td>
+                                                       </tr>
+                                                       <tr>
+                                                               <td>Address</td>
+                                                               <td> :  </td>
+                                                               <td> {{(member| async)?.address}} </td>
+                                                       </tr>
+                                                       <tr>
+                                                               <td>Registered </td>
+                                                               <td> :  </td>
+                                                               <td> {{(member| async)?.created_date}} </td>
+                                                       </tr>
+                                                       <tr>
+                                                                <td><br/></td>
+                                                                <td></td>
+                                                               
+                                                        </tr>
+                                                       <tr>
+                                                                <td><b>Roles</b> </td>
+                                                                <td><b>:</b></td>
+                                                                <td><b>{{admin_group_name}}</b></td>
+                                                               
+                                                        </tr>
+                
+                                                       <tr>
+                                                                <td> </td>
+                                                                <td>  </td>
+                                                                <td>  <div *ngFor="let role of roles" style="margin-bottom:4px">
+                                                                              <mat-slide-toggle style="font-size: 0.8rem" [checked]="role.has_member" [disabled]="meornotmine" (change)="toggleRole($event,role.id,role.name)">{{role.name}}</mat-slide-toggle>
+                    
+                                                                        </div>    </td>
+                                                        </tr>
+                                                    
+                                                    </table>
+                        </div>
+                       
+                
+                           
+                
+                         
+                </div>
+                
+                <div class="content-footer">
+                        <div *ngIf="isReg"  class="detail-edit"> 
+                                <a mat-button [disabled]="meornotmine" (click)="delete()">
+                                 Delete
+                                    <mat-icon>
+                                                <svg-icon src="../../assets/mat-icons/trash.svg" [svgStyle]="{ 'width.px':24 }"></svg-icon>
+                                       
+                                    </mat-icon>
+                                </a>       
+                           </div>
+                            
+                      </div>
+</div>

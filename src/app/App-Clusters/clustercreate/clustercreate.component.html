@@ -1,0 +1,119 @@
+<div class="content-header-form">
+                <div style="display: flex; align-items: center">
+                                <h3 style="flex-grow:1">
+                                  Create New Group
+                                </h3>
+                                <button mat-mini-fab color="accent"  [disabled]="newClusterForm.invalid" (click)="onSubmit()">
+                                          <mat-icon><svg-icon src='../../../assets/mat-icons/send.svg' [svgStyle]="{ 'width.px':24 }"></svg-icon></mat-icon> 
+                                </button>
+                             </div>
+    
+    <div class="switch-section">
+    
+    </div>
+</div>
+
+<div class="content-container-form">
+                        <form class="add-new-section" [formGroup]="newClusterForm" (ngSubmit)="onSubmit()"> 
+                           <div class="new-form-section">
+
+                                        <mat-form-field  class="full-with-field">
+                                                <input matInput placeholder="Cluster Name" class="form-control" formControlName="name" type="text" >
+                                                <mat-error *ngIf="name.errors?.required&&name.touched">
+                                                       Name is required
+                                                </mat-error>
+                                                <mat-error *ngIf="name.errors?.minlength && name.touched">
+                                                       Invalid name 
+                                               </mat-error>
+                                        </mat-form-field>
+                                         <mat-form-field class="full-with-field">
+                                               <span matPrefix>+263 &nbsp;</span>
+                                               <input matInput placeholder="Cell" class="form-control" formControlName="cell" type="text" >
+                                               <mat-icon matSuffix>phone_android</mat-icon>
+                                               <mat-error *ngIf="cell.invalid && cell.touched">
+                                                   Invalid Cell number 
+                                              </mat-error>
+ 
+                                        </mat-form-field>
+                                  
+                                        <mat-form-field class="full-with-field">
+                                                <input matInput placeholder="Contact Name" class="form-control" formControlName="contact_name" type="text" >
+                                                <mat-icon matSuffix>person</mat-icon>
+                                                <mat-error *ngIf="contact_name.errors?.required && contact_name.touched">
+                                                                Contact name is required
+                                               </mat-error>
+                                                <mat-error *ngIf="contact_name.errors?.minlength && contact_name.touched">
+                                                   Invalid contact name 
+                                               </mat-error>
+                                               <mat-error *ngIf="contact_name.errors?.pattern && contact_name.touched">
+                                                        Contact name must contain letters only
+                                               </mat-error>
+
+                                        </mat-form-field>
+                                         <h3>Conditions</h3>
+                                        <div class="new-form-section" [formGroup]="constraintsForm">
+                                         
+                                                                                                                       
+                                                        <mat-form-field class="full-with-field">
+                                                                <input matInput placeholder="Min Age" min=0 class="form-control" formControlName="min_age" type="number" >
+                                                                
+                                                                </mat-form-field>
+                                                        <mat-form-field class="full-with-field">
+                                                                 <input matInput placeholder="Max Age" min=0 class="form-control" formControlName="max_age" type="number" >
+                                                                 <mat-error *ngIf="constraintsForm?.validator && max_age.touched">
+                                                                                Invalid
+                                                                 </mat-error>
+                                                        </mat-form-field>
+                                                        
+                                                        <mat-form-field class="full-with-field">
+                                                                        <mat-select placeholder="Gender" formControlName="gender">
+                                                                            <mat-option *ngFor="let gn of gender" [value]="gn.value">
+                                                                                 {{gn.viewValue}}
+                                                                             </mat-option>
+                                                                        </mat-select>
+                                                        </mat-form-field> 
+                                                      
+                                                 
+
+                                                        <mat-form-field class="full-with-field">
+                                                                <mat-select placeholder="Marital Status" formControlName="marital_status">
+                                                                    <mat-option *ngFor="let ms of marital_states" [value]="ms.value">
+                                                                         {{ms.viewValue}}
+                                                                     </mat-option>
+                                                                </mat-select>
+                                                         </mat-form-field>         
+                
+                                                  
+                                               </div>
+                                        <h3>Extra Info</h3>
+                                        <mat-form-field class="full-with-field">
+                                                <textarea rows="2" matInput placeholder="Address" class="form-control" formControlName="address" type="text" >
+                                                        </textarea>
+                                                <mat-error *ngIf="address.errors?.minlength && address.touched">
+                                                    Invalid address
+                                                </mat-error>         
+                                         </mat-form-field> 
+                                                                    
+                                        <mat-form-field class="full-with-field">
+                                                <textarea matInput placeholder="Agenda" class="form-control" rows="2" formControlName="agenda" type="text" >
+                                                </textarea>
+                                                <mat-error *ngIf="agenda.errors?.required && agenda.touched">
+                                                        Agenda is reqiured
+                                                </mat-error> 
+                                                <mat-error *ngIf="agenda.errors?.minlength && agenda.touched">
+                                                        Invalid Agenda
+                                                </mat-error> 
+                                        </mat-form-field>                                              
+                                  
+                                   
+                                </div>            
+                            </form>
+                           
+  
+</div>
+
+    
+
+
+
+          

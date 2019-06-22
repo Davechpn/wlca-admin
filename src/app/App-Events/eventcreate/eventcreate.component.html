@@ -1,0 +1,84 @@
+<div class="content-header-form">
+                <div style="display: flex; align-items: center">
+                                <h3 style="flex-grow:1">
+                                  Post New Event
+                                </h3>
+                                <button mat-mini-fab color="accent"  [disabled]="profileForm.invalid" (click)="onSubmit()">
+                                          <mat-icon><svg-icon src='../../../assets/mat-icons/send.svg' [svgStyle]="{ 'width.px':24 }"></svg-icon></mat-icon> 
+                                </button>
+                             </div>
+        <div class="switch-section">
+            
+            
+        </div>
+    </div>
+
+<div class="content-container-form">
+        <form  class="add-new-section"  [formGroup]="profileForm" (ngSubmit)="onSubmit()"> 
+                <div class="new-form-section">
+
+                <mat-form-field class="full-with-field">
+                        <input matInput placeholder="Name" class="form-control" formControlName="title" type="text" >
+                        <mat-error *ngIf="title.errors?.required&&title.touched">
+                                      Event name is required
+                        </mat-error>
+                        <mat-error *ngIf="title.errors?.minlength&&title.touched">
+                                      Invalid event name 
+                        </mat-error>
+                        <mat-error *ngIf="title.errors?.maxlength&&title.touched">
+                                      Event name too long 
+                          </mat-error>
+               
+                </mat-form-field>
+
+
+                <div  class="full-with-field">
+                        <mat-form-field class="full-with-field">
+                                <input matInput [matDatepicker]="picker1" placeholder="Start Date"  formControlName="start_date">
+                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker touchUi #picker1 disabled="false"></mat-datepicker>
+                                <mat-error *ngIf="start_date.errors?.required&&start_date.touched">
+                                                Starting date is required
+                                  </mat-error>
+                              </mat-form-field>
+                              <input type="time" formControlName="start_time">
+                </div>
+                <br/>
+                <div class="full-with-field">
+                        <mat-form-field class="full-with-field">
+                                <input matInput [matDatepicker]="picker" placeholder="End Date"  formControlName="end_date" >
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker touchUi #picker></mat-datepicker>
+                                <mat-error *ngIf="end_date.errors?.required&&end_date.touched">
+                                                Ending date is required
+                                </mat-error>
+                              </mat-form-field>
+                             
+                        <input type="time" formControlName="end_time">
+                          
+                </div>
+
+                
+                
+                <mat-form-field class="full-with-field">
+                        <textarea rows="10" matInput placeholder="Description" class="form-control" formControlName="body" type="text" >
+                            </textarea>
+
+                            <mat-error *ngIf="body.errors?.required&&body.touched">
+                                        Event description is required
+                            </mat-error>
+                            <mat-error *ngIf="body.errors?.minlength&&body.touched">
+                                        Invalid event description 
+                            </mat-error>   
+                </mat-form-field>
+
+             
+            </div>
+            </form>
+</div>
+<div class="content-footer">
+                <div class="fab-section">
+                       
+                </div>
+                    
+            </div>

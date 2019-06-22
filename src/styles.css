@@ -1,1 +1,106 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~firebaseui/dist/firebaseui.css';
+@import "~./assets/css/layout.css";
+@import "~./assets/css/content-section.css";
+@import "~./assets/css/sidebar.css";
+@import "~./assets/css/list-item.css";
+@import "~./assets/css/member_list_item.css";
+@import "~./assets/css/forms.css";
+@import "~./assets/css/material-icons-font.css";
+
+
+
+@font-face {
+     font-family:Mukta ;
+    src: url(assets/mat-icons/Mukta-Regular.ttf);
+}
+
+body{
+    font-family: 'Mukta', sans-serif;
+    background-position: center center;
+    background-color: #f5f5f5;
+    overscroll-behavior: contain;
+ 
+ }
+
+ .delayed-box{
+     
+     height: 100vh;
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     margin-bottom: 40px;
+        
+ }
+ .delay-not{
+    border-radius: 10px; 
+    padding: 16px;
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7)
+ }
+
+
+.full-screen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 99vh;
+    align-items: stretch; 
+ 
+
+}
+
+.login-container{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.action-fab{
+    position: absolute;
+    bottom: 16px;
+    right: 2px;
+}
+
+
+   /*MEDIA QUERIES*/
+   @media screen and (min-width:1024px){
+ 
+    }
+   @media screen and (max-width:1024px){
+  
+    }
+    @media screen and (max-width:768px){
+        .full-screen{
+          
+            height: 100vh;
+      
+        }
+    }
+    @media screen and (max-width:480px){
+        .full-screen{
+        
+            height: 100vh;
+
+        }
+        body{
+            background-color: #fff;
+        }
+
+    }
+    /*Min height styles---------------*/
+    @media screen and (min-height:360px){
+   
+
+        }
+    @media screen and (max-height:480px){
+  
+
+    }
+    @media screen and (min-height:640px){
+      
+
+    }

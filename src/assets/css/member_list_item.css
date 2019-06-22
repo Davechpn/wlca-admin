@@ -1,0 +1,42 @@
+.member-item{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #efefefef;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-family: 'Mukta', sans-serif;
+}
+.member-item-top{
+    display: flex; 
+    
+
+}
+.member-item-name{
+    flex-basis:100%;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+.member-item-tag{
+    justify-self: flex-end;
+    align-self: flex-start;
+    background-color: #efefefef;
+    font-size: 0.7rem;
+    padding-left: 4px;
+    padding-right: 4px;
+   
+}
+.member-item-bottom{
+    display: flex;
+    font-size: 0.8rem;
+    
+}
+.member-item-gender{
+  width: 75px
+}
+.member-item-cell{
+    flex-grow: 1;
+    display: flex;justify-content: flex-end;
+    font-size: 0.7rem;
+
+}

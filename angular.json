@@ -20,10 +20,13 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.json"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/theme.scss"
+             
             ],
             "scripts": []
           },
@@ -50,7 +53,8 @@
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 }
-              ]
+              ],
+              "serviceWorker": true
             }
           }
         },
@@ -79,12 +83,14 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/theme.scss"
             ],
             "scripts": [],
             "assets": [
               "src/favicon.ico",
               "src/assets"
+             
             ]
           }
         },

@@ -1,0 +1,44 @@
+
+<div class="content-screen">
+    <div class="content-header">
+        <mat-card-header>
+                <div mat-card-avatar class="example-header-image">
+                    <svg-icon src='../../../assets/mat-icons/notification.svg' [svgStyle]="{ 'width.px':36 }"></svg-icon>
+
+                </div >
+                <mat-card-title><span class="cluster-poster-label">{{(notice| async)?.title}}</span> </mat-card-title>
+                <mat-card-subtitle>{{(notice| async)?.group_name}} </mat-card-subtitle>
+        </mat-card-header>
+    <div class="switch-section">
+        <div>
+
+                {{date}}<br/>
+                <h3>{{year}}</h3>
+        </div>
+    </div>
+ 
+</div>
+<div class="content-container">
+ 
+        {{(notice| async)?.body}}
+        
+  
+</div>
+
+<div class="content-footer">
+        <div class="fab-section">
+                <div *ngIf="isMine" class="detail-edit">  
+                        <a mat-button (click)="delete()">  
+                            Delete                
+                            <mat-icon>
+                                <svg-icon src="../../assets/mat-icons/trash.svg" [svgStyle]="{ 'width.px':24 }"></svg-icon>
+                                       
+                            </mat-icon>
+                        
+                        </a>       
+            </div>
+        </div>
+            
+</div>
+
+</div>

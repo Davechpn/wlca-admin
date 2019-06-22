@@ -1,0 +1,53 @@
+
+{
+    "gcm_sender_id": "103953800507",
+    "name": "Real Word & Grace",
+    "short_name": "RWG FNL",
+    "theme_color": "#fff",
+    "background_color": "#fafafa",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "https://firebasestorage.googleapis.com/v0/b/wlca-4bc1d.appspot.com/o/rwg%2Frwglogo-72px.png?alt=media&token=30049e02-216b-4dd9-a024-beafad3effee",
+            "sizes": "72x72",
+            "type": "image/png"
+          },
+          {
+            "src": "https://firebasestorage.googleapis.com/v0/b/wlca-4bc1d.appspot.com/o/rwg%2Frwglogo-96px.png?alt=media&token=5ca46a7b-7591-4988-9e77-c92f49482e6b",
+            "sizes": "96x96",
+            "type": "image/png"
+          },
+          {
+            "src": "https://firebasestorage.googleapis.com/v0/b/wlca-4bc1d.appspot.com/o/rwg%2Frwglogo-128px.png?alt=media&token=0f404b52-92db-4a3f-9863-d38536cd22fa",
+            "sizes": "128x128",
+            "type": "image/png"
+          },
+          {
+            "src": "https://firebasestorage.googleapis.com/v0/b/wlca-4bc1d.appspot.com/o/rwg%2Frwglogo-144px.png?alt=media&token=c86980eb-6698-4f60-b31b-915fe8eb8a4e",
+            "sizes": "144x144",
+            "type": "image/png"
+          },
+          {
+            "src": "https://firebasestorage.googleapis.com/v0/b/wlca-4bc1d.appspot.com/o/rwg%2Frwglogo-152px.png?alt=media&token=4cdcb33c-59c6-4265-8eb4-ad98b0ed32d4",
+            "sizes": "152x152",
+            "type": "image/png"
+          },
+          {
+            "src": "https://firebasestorage.googleapis.com/v0/b/wlca-4bc1d.appspot.com/o/rwg%2Frwglogo-384px.png?alt=media&token=d3f67342-f054-49cd-a5f7-f157f5b1c0ac",
+            "sizes": "192x192",
+            "type": "image/png"
+          },
+          {
+            "src": "https://firebasestorage.googleapis.com/v0/b/wlca-4bc1d.appspot.com/o/rwg%2Frwglogo-384px.png?alt=media&token=d3f67342-f054-49cd-a5f7-f157f5b1c0ac",
+            "sizes": "384x384",
+            "type": "image/png"
+          },
+          {
+            "src": "https://firebasestorage.googleapis.com/v0/b/wlca-4bc1d.appspot.com/o/rwg%2Frwglogo-512px.png?alt=media&token=8071bbee-885f-4206-9e3c-f830b0ee5832",
+            "sizes": "512x512",
+            "type": "image/png"
+          }
+    ]
+}

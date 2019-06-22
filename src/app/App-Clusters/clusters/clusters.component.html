@@ -1,0 +1,77 @@
+<div class="content-screen">
+    <div class="content-header">
+        <mat-card-header class="poster-header">
+            <div mat-card-avatar class="example-header-image">
+                <svg-icon src='../../../assets/mat-icons/worlwide.svg' [svgStyle]="{ 'width.px':42 }"></svg-icon>
+            </div>
+                <mat-card-title><h2 class="poster-label"> &nbsp; Network</h2> </mat-card-title>
+                <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-header>
+      <div class="switch-section">
+         
+           View all &nbsp; &nbsp;
+          <mat-slide-toggle [checked]="view_settings.clusters" (change)="toggleGet($event)"></mat-slide-toggle>
+
+      </div>
+     
+</div>
+
+
+
+<div class="content-container">
+
+<div class="list-item" style="position: relative;right:10px" (click)="viewDetail(my_group_Id)">
+       
+    
+
+        <div class="list-item-summary">
+            <div class="list-item-title">
+                    <h3>Members</h3>
+            </div>
+          
+        </div>
+      
+</div>
+
+<b><h3>Groups :</h3></b> 
+<div class="list-item" *ngFor="let cluster of clusters | async" (click)="viewDetail(cluster.id)">
+       
+      
+
+        <div class="list-item-summary">
+            <div class="list-item-title">
+                    <h4 class="non-elipsis">{{cluster.name}}</h4>
+                    <h4 class="small-elipsis">{{cluster.name | truncate : 25}}</h4>
+                    <h4 class="mobile-elipsis">{{cluster.name | truncate : 30}}</h4>
+                    <h4 class="medium-elipsis">{{cluster.name | truncate : 42}}</h4>
+            </div>
+            <div class="list-item-short-info">             
+                <span *ngIf="cluster.is_sent">
+                    {{cluster.cell}}
+                </span>
+              
+               <span *ngIf="!cluster.is_sent">
+                    unsent  
+               </span>
+            </div> 
+        </div>
+      
+</div>
+    
+</div>
+
+
+<div class="content-footer">
+<div class="fab-section">
+    <a *ngIf="permissions.clusters.has_fab" mat-fab color="accent" routerLink="/clusters/new">
+    <mat-icon> 
+        add
+    </mat-icon>   
+         
+    </a>
+</div>
+    
+</div>
+</div>
+ 
+ 

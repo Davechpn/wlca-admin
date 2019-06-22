@@ -1,0 +1,86 @@
+<div class="content-header-form">
+        <div style="display: flex; align-items: center">
+                <h3 style="flex-grow:1" *ngIf="!pledgeView">
+                  New Raised Funding
+                </h3>
+                <h3 style="flex-grow:1" *ngIf="pledgeView">
+                        New Pledged Funding
+                 </h3>
+                    <button *ngIf="!pledgeView" mat-mini-fab color="accent"  [disabled]="profileForm.invalid" (click)="onSubmit()">
+                        <mat-icon>
+                                <svg-icon src='../../../assets/mat-icons/send.svg' [svgStyle]="{ 'width.px':24 }"></svg-icon>
+                        </mat-icon> 
+                    </button>
+                    <button *ngIf="pledgeView" mat-mini-fab color="accent"  [disabled]="profileForm.invalid" (click)="onSubmitPledge()">
+                            <mat-icon>
+                                    <svg-icon src='../../../assets/mat-icons/send.svg' [svgStyle]="{ 'width.px':24 }"></svg-icon>
+                            </mat-icon> 
+                    </button>
+                <!-- <button mat-raised-button color="accent"  [disabled]="profileForm.invalid" (click)="onSubmitPledge()"> Pledged
+                        <mat-icon>done</mat-icon>
+                    </button>&nbsp;&nbsp;&nbsp;
+                    <button mat-raised-button color="accent"  [disabled]="profileForm.invalid" (click)="onSubmit()">&nbsp;&nbsp; Paid
+                        <mat-icon>done_all</mat-icon>
+                    </button> -->
+             </div>
+  <div class="switch-section">
+    
+      
+  </div>
+</div>
+<div class="content-container">
+        <form class="add-new-section" [formGroup]="profileForm" (ngSubmit)="onSubmit()"> 
+                    <div class="new-form-section">
+                <mat-form-field class="full-with-field">
+                        <input matInput placeholder="Name" class="form-control" formControlName="title" type="text" >
+                        <mat-error *ngIf="title.errors?.required&&title.touched">
+                                        Name is required
+                        </mat-error>
+                        <mat-error *ngIf="title.errors?.minlength&&title.touched">
+                                        Invalid Name 
+                        </mat-error>
+                        <mat-error *ngIf="title.errors?.maxlength&&title.touched">
+                                        Name too long 
+                            </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-with-field">
+                        <input matInput [matDatepicker]="picker1" placeholder="Date"  formControlName="date">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker touchUi #picker1></mat-datepicker>
+                        <mat-error *ngIf="date.errors?.required&&date.touched">
+                                date is required
+                        </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-with-field">
+                    <mat-select placeholder="Payment Method" formControlName="payment_method">
+                        <mat-option *ngFor="let pm of payment_methods" [value]="pm.value">
+                             {{pm.viewValue}}
+                         </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="payment_method.errors?.required&&payment_method.touched">
+                            Payment method is required
+                    </mat-error>
+                 </mat-form-field> 
+               
+   
+
+                <mat-form-field class="full-with-field">
+                        <input matInput placeholder="Amount" class="form-control" formControlName="amount" type="number" >
+                        <mat-error *ngIf="amount.errors?.required&&amount.touched">
+                                Amount is required
+                         </mat-error>
+                </mat-form-field>
+
+    
+            </div>
+            </form>
+</div>
+  
+<div class="content-footer">
+        <div class="fab-section">
+           
+        </div>
+            
+    </div>

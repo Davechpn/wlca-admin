@@ -1,0 +1,48 @@
+<div class="content-header-form">
+        <div style="display: flex; align-items: center">
+                <h3 style="flex-grow:1">
+                  Post Pledge Payment
+                </h3>
+                <button mat-mini-fab color="accent"  [disabled]="profileForm.invalid" (click)="onSubmit()">
+                          <mat-icon>   <svg-icon src='../../../assets/mat-icons/send.svg' [svgStyle]="{ 'width.px':24 }"></svg-icon></mat-icon> 
+                </button>
+             </div>
+  <div class="switch-section">
+    
+      
+  </div>
+</div>
+<div class="content-container-form">
+      <form class="add-new-section" [formGroup]="profileForm" (ngSubmit)="onSubmit()"> 
+                  <div class="new-form-section">
+              <mat-form-field class="full-with-field" disabled style="position: relative;left:-6px">
+                      <input matInput placeholder=" " class="form-control" disabled="true" formControlName="title" type="text" >
+              </mat-form-field>
+
+
+              <mat-form-field class="full-with-field" >
+                <mat-select placeholder=" Payment Method" formControlName="payment_method">
+                    <mat-option *ngFor="let pm of payment_methods" [value]="pm.value">
+                         {{pm.viewValue}}
+                     </mat-option>
+                </mat-select>
+                <mat-error *ngIf="payment_method.errors?.required&&payment_method.touched">
+                        Payment method is required
+                </mat-error>
+             </mat-form-field> 
+             
+ 
+
+              <mat-form-field class="full-with-field">
+                      <input matInput placeholder="Amount" class="form-control" formControlName="amount" type="number" >
+                      <span matPrefix>$&nbsp;</span>
+                      <span matSuffix>.00</span>
+                      <mat-error *ngIf="amount.errors?.required&&amount.touched">
+                            Amount is required
+                     </mat-error>
+             </mat-form-field>
+
+  
+          </div>
+          </form>
+</div>

@@ -1,0 +1,53 @@
+<div class="content-screen">
+        <div class="content-header">
+                <mat-card-header>
+                        <div mat-card-avatar class="example-header-image">
+                                <svg-icon src='../../../assets/mat-icons/open-magazine.svg' [svgStyle]="{ 'width.px':36 }"></svg-icon>
+
+
+                        </div >
+                        <mat-card-title><span class="cluster-poster-label">{{(word| async)?.title}}</span> </mat-card-title>
+                        <mat-card-subtitle>{{(word| async)?.group_name}} </mat-card-subtitle>
+                </mat-card-header>
+                
+                <div class="switch-section">
+                        <div>
+                                
+                             {{date}}
+                          </div>
+                    
+                </div> 
+        
+            <div class="summary-section">
+                  
+                  <div class="switch-section">
+                        <h3>2019</h3>
+                 </div> 
+           </div>
+               
+        </div>
+        <div class="content-container">
+           
+                  <div>
+                     {{(word| async)?.summary}}
+                  </div>
+                  <br/>
+                {{(word| async)?.body}}
+        
+        
+        </div>
+        
+        <div class="content-footer">
+                <div *ngIf="isMine" class="detail-edit">  
+                        <a mat-button (click)="delete()">
+                         Delete
+                            <mat-icon>
+                                <svg-icon src="../../assets/mat-icons/trash.svg" [svgStyle]="{ 'width.px':24 }"></svg-icon>
+                                       
+                            </mat-icon>
+                        </a>       
+                   </div>
+                    
+              </div>
+        
+</div>
